@@ -44,7 +44,7 @@ loader = transforms.Compose(
         # transforms.Normalize(mean=[], std=[])
     ])
 
-original_img = load_image('van_gogh_style.jpeg', device)
+original_img = load_image('linus_torvalds.jpeg', device)
 style_img = load_image('picasso_style.jpeg', device)
 generated = original_img.clone().to(device).requires_grad_(True)
 
@@ -85,5 +85,5 @@ for step in range(total_steps):
 
     if step % 200 == 0:
         print(total_loss)
-        save_image(generated, 'generated.jpeg')
+        save_image(generated, 'generated_images/generated.jpeg')
 
