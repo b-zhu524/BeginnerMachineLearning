@@ -39,6 +39,8 @@ class Block(nn.Module):
         x += identity
         x = self.relu(x)
 
+        return x
+
 
 class ResNet(nn.Module):  # [3, 4, 6, 3]
     def __init__(self, block, layers, image_channels, num_classes):
