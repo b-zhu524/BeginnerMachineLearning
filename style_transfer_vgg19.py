@@ -35,13 +35,12 @@ def load_image(image_name, device):
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 image_size = 100    # lower for cpu
-model = VGG().to(device).eval() # .eval() to freeze weights
+model = VGG().to(device).eval()
 
 loader = transforms.Compose(
     [
         transforms.Resize((image_size, image_size)),
         transforms.ToTensor(),
-        # transforms.Normalize(mean=[], std=[])
     ])
 
 original_img = load_image('linus_torvalds.jpeg', device)
