@@ -4,3 +4,7 @@
 3. MNIST and Fashion-MNIST dataset 
    (can be installed through torchvision)
    
+# How to install
+
+windows: pip install torch torchvision
+mac: pip3 install torch torchvision
