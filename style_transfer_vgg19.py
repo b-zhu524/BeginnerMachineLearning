@@ -34,7 +34,7 @@ def load_image(image_name, device):
 
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-image_size = 100    # lower for cpu
+image_size = 180    # lower for cpu
 model = VGG().to(device).eval()
 
 loader = transforms.Compose(
@@ -43,12 +43,12 @@ loader = transforms.Compose(
         transforms.ToTensor(),
     ])
 
-original_img = load_image('linus_torvalds.jpeg', device)
-style_img = load_image('picasso_style.jpeg', device)
+original_img = load_image('calvin_coolidge_180.jpeg', device)
+style_img = load_image('starry_night_180.jpeg', device)
 generated = original_img.clone().to(device).requires_grad_(True)
 
 # Hyperparameters
-total_steps = 6000
+total_steps = 8000
 learning_rate = 0.001
 alpha = 1
 beta = 0.01
@@ -85,4 +85,3 @@ for step in range(total_steps):
     if step % 200 == 0:
         print(total_loss)
         save_image(generated, 'generated_images/generated.jpeg')
-
