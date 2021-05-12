@@ -78,10 +78,12 @@ for step in range(total_steps):
 
     total_loss = alpha * content_loss + beta * style_loss
     optimizer.zero_grad()
-    
+
     total_loss.backward()
     optimizer.step()
 
-    if step % 200 == 0:
+    if step % 20 == 0:
+        print(step, total_loss)
+    if step % 100 == 0:
         print(total_loss)
         save_image(generated, 'generated_images/generated.jpeg')
