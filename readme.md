@@ -6,5 +6,5 @@
    
 # How to install
 
-windows: pip install torch torchvision
-mac: pip3 install torch torchvision
+windows: pip install torch torchvision torchaudio
+mac: pip3 install torch torchvision torchaudio
