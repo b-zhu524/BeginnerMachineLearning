@@ -86,4 +86,4 @@ for step in range(total_steps):
         print(step, total_loss)
     if step % 100 == 0:
         print(total_loss)
-        save_image(generated, 'generated_images/generated.jpeg')
+        save_image(generated, 'generated_images/generated2.jpeg')
