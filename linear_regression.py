@@ -1,7 +1,6 @@
 import torch
 from torch import tensor
 from random import shuffle
-import matplotlib.pyplot as plt
 
 
 def generate_data(w, b, num_examples):
@@ -12,15 +11,6 @@ def generate_data(w, b, num_examples):
     y_reshaped = torch.reshape(y, shape=(-1, 1))
 
     return X, y_reshaped
-
-
-# true_w = tensor([1.0, -3.4])
-# true_b = 4.2
-# X, y = generate_data(true_w, true_b, 1000)
-#
-# plt.scatter(X[:, 0], y, s=1, c="blue")
-# plt.scatter(X[:, 1], y, s=1, c="red")
-# plt.show()
 
 
 def data_iter(features, labels, batch_size):
