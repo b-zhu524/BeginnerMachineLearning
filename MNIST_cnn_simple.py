@@ -8,11 +8,11 @@ import torchvision.datasets as datasets
 import torchvision.transforms as transforms
 import logging
 
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)
-ch = logging.StreamHandler()
-ch.setLevel(logging.DEBUG)
-logger.addHandler(ch)
+# logger = logging.getLogger(__name__)
+# logger.setLevel(logging.DEBUG)
+# ch = logging.StreamHandler()
+# ch.setLevel(logging.DEBUG)
+# logger.addHandler(ch)
 
 
 # Create CNN
@@ -84,7 +84,7 @@ test_loader = DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=Fa
 # initialize model
 model = CNN(in_channels=1, num_classes=num_classes).to(device)
 
-logger.debug(model)
+# logger.debug(model)
 
 # loss and optimizer
 criterion = nn.CrossEntropyLoss()
