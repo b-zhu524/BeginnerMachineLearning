@@ -50,32 +50,21 @@ class GoogleNet(nn.Module):
         self.fc1 = nn.Linear(1024, num_classes)
 
     def forward(self, x):
-        print(f"input: {x.shape}")
         x = self.conv1(x)
-        print(f"conv1: {x.shape}")
         x = self.maxpool1(x)
-        print(f"maxpool1: {x.shape}")
         x = self.conv2(x)
-        print(f"conv2: {x.shape}")
         x = self.maxpool2(x)
-        print(f"maxpool2: {x.shape}")
 
         x = self.inception3(x)
-        print(f"inception3: {x.shape}")
 
         x = self.inception4(x)
-        print(f"inception4: {x.shape}")
 
         x = self.inception5(x)
-        print(f"inception5: {x.shape}")
 
         x = self.avgpool(x)
-        print(f"avgpool: {x.shape}")
         x = x.reshape(x.shape[0], -1)
         x = self.dropout(x)
-        print(f"reshape: {x.shape}")
         x = self.fc1(x)
-        print(f"fc1: {x.shape}")
         return x
 
 
