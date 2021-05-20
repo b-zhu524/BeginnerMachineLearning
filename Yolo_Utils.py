@@ -4,7 +4,6 @@ import torch
 def intersection_over_union(pred_box, label_box, box_format='corners'):
 
     if box_format == 'corners':
-        global box1_x1, box1_y1, box1_x2, box1_y2, box2_x1, box2_y1, box2_x2, box2_y2
         box1_x1 = pred_box[..., 0:1]
         box1_y1 = pred_box[..., 1:2]
         box1_x2 = pred_box[..., 2:3]
