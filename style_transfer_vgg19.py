@@ -43,8 +43,8 @@ loader = transforms.Compose(
         transforms.ToTensor(),
     ])
 
-original_img = load_image('/images_vgg/calvin_coolidge_180.jpeg', device)
-style_img = load_image('starry_night_180.jpeg', device)
+original_img = load_image('images_vgg/calvin_coolidge_180.jpeg', device)
+style_img = load_image('images_vgg/starry_night_180.jpeg', device)
 generated = original_img.clone().to(device).requires_grad_(True)
 
 # Hyperparameters
