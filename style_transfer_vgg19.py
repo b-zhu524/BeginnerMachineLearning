@@ -43,7 +43,7 @@ loader = transforms.Compose(
         transforms.ToTensor(),
     ])
 
-original_img = load_image('images_vgg/Yearbook_Portrait.jpeg', device)
+original_img = load_image('images_vgg/calvin_coolidge_180.jpeg', device)
 style_img = load_image('images_vgg/starry_night_180.jpeg', device)
 generated = original_img.clone().to(device).requires_grad_(True)
 
@@ -86,4 +86,4 @@ for step in range(total_steps):
         print(step, total_loss)
     if step % 100 == 0:
         print(total_loss)
-        save_image(generated, 'generated_images/generated2.jpeg')
+        save_image(generated, 'generated_images/generated.jpeg')
